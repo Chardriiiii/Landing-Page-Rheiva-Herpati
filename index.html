@@ -324,39 +324,63 @@
             <!-- Grid untuk Gambar Portfolio. Silakan ganti URL di tag <img> -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Portfolio Item 1 -->
-                <div class="group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 reveal">
+                <!-- Portfolio Item 1 (ITK) -->
+                <!-- GANTI 'NAMA_FILE_ITK.pdf' DENGAN NAMA FILE PDF ANDA (Contoh: 'Panduan_ITK.pdf') -->
+                <div onclick="openPDF('NAMA_FILE_ITK.pdf', 'Panduan Extension of ITK')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
                     <div class="h-64 overflow-hidden bg-gray-100 relative">
-                        <!-- === GANTI GAMBAR DI SINI === -->
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
                         <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+ITK+Di+Sini" alt="Prosedur ITK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-6 bg-white">
+                    <div class="p-6 bg-white relative z-10">
                         <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Panduan</span>
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Extension of Izin Tinggal Kunjungan (ITK)</h4>
                         <p class="text-gray-600 text-sm">60 Days Visa Extension Procedures.</p>
                     </div>
                 </div>
 
-                <!-- Portfolio Item 2 -->
-                <div class="group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 reveal">
+                <!-- Portfolio Item 2 (VOA) -->
+                <!-- GANTI 'NAMA_FILE_VOA.pdf' DENGAN NAMA FILE PDF ANDA -->
+                <div onclick="openPDF('NAMA_FILE_VOA.pdf', 'Panduan Visa On Arrival (VOA)')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
                     <div class="h-64 overflow-hidden bg-gray-100 relative">
-                        <!-- === GANTI GAMBAR DI SINI === -->
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
                         <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+VOA+Di+Sini" alt="Prosedur VOA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-6 bg-white">
+                    <div class="p-6 bg-white relative z-10">
                         <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Panduan</span>
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Visa On Arrival (VOA)</h4>
                         <p class="text-gray-600 text-sm">Langkah-langkah aplikasi dan perpanjangan menggunakan e-Visa.</p>
                     </div>
                 </div>
 
-                <!-- Portfolio Item 3 -->
-                <div class="group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 reveal">
+                <!-- Portfolio Item 3 (ABG) -->
+                <!-- GANTI 'NAMA_FILE_ABG.pdf' DENGAN NAMA FILE PDF ANDA -->
+                <div onclick="openPDF('NAMA_FILE_ABG.pdf', 'Sertifikat Anak Berkewarganegaraan Ganda')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
                     <div class="h-64 overflow-hidden bg-gray-100 relative">
-                        <!-- === GANTI GAMBAR DI SINI === -->
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
                         <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+ABG+Di+Sini" alt="Prosedur ABG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
                     </div>
-                    <div class="p-6 bg-white">
+                    <div class="p-6 bg-white relative z-10">
                         <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Tata Cara</span>
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Sertifikat Anak Berkewarganegaraan Ganda</h4>
                         <p class="text-gray-600 text-sm">Daftar persyaratan dan prosedur pengajuan ABG.</p>
@@ -505,6 +529,36 @@
         </div>
     </footer>
 
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-navy-900/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 p-4">
+        <div class="relative w-full max-w-5xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden scale-95 transition-transform duration-300" id="pdf-modal-content">
+            
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-4 md:px-6 border-b border-gray-200 bg-gray-50 z-20">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                    <h3 id="pdf-modal-title" class="text-lg md:text-xl font-bold text-navy-900 line-clamp-1">Dokumen</h3>
+                </div>
+                <button id="close-pdf-btn" class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 hover:bg-red-100 hover:text-red-600 flex items-center justify-center transition-colors focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="flex-grow w-full h-full relative bg-gray-200">
+                <!-- Loading Spinner -->
+                <div id="pdf-loading" class="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <i class="fas fa-circle-notch fa-spin text-4xl text-navy-900 mb-3"></i>
+                    <p class="text-gray-600 font-medium animate-pulse">Memuat Dokumen...</p>
+                    <p class="text-gray-400 text-sm mt-2 max-w-xs text-center">*Jika tidak muncul, pastikan file PDF sudah di-upload ke folder yang sama.</p>
+                </div>
+                
+                <!-- Iframe Viewer -->
+                <iframe id="pdf-iframe" class="w-full h-full border-none relative z-20 opacity-0 transition-opacity duration-500" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
@@ -552,6 +606,74 @@
         // Select all elements with reveal classes
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
             observer.observe(el);
+        });
+
+        // ==========================================
+        // PDF Modal Logic
+        // ==========================================
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfModalContent = document.getElementById('pdf-modal-content');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        const pdfModalTitle = document.getElementById('pdf-modal-title');
+        const closePdfBtn = document.getElementById('close-pdf-btn');
+
+        // Fungsi Buka PDF
+        function openPDF(pdfUrl, title) {
+            pdfModalTitle.textContent = title;
+            
+            // Tampilkan Modal (Remove hidden)
+            pdfModal.classList.remove('hidden');
+            
+            // Jalankan animasi setelah frame berikutnya
+            requestAnimationFrame(() => {
+                pdfModal.classList.remove('opacity-0');
+                pdfModalContent.classList.remove('scale-95');
+                pdfModalContent.classList.add('scale-100');
+            });
+
+            // Setel source iframe
+            pdfIframe.src = pdfUrl;
+            
+            // Ketika iframe selesai dimuat, tampilkan iframe-nya (sembunyikan efek loading)
+            pdfIframe.onload = function() {
+                pdfIframe.classList.remove('opacity-0');
+            };
+            
+            // Cegah scroll pada body utama
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi Tutup PDF
+        function closePDF() {
+            // Jalankan animasi keluar
+            pdfModal.classList.add('opacity-0');
+            pdfModalContent.classList.remove('scale-100');
+            pdfModalContent.classList.add('scale-95');
+            
+            // Sembunyikan sepenuhnya setelah animasi selesai (300ms)
+            setTimeout(() => {
+                pdfModal.classList.add('hidden');
+                pdfIframe.src = ""; // Bersihkan source agar tidak memuat di belakang layar
+                pdfIframe.classList.add('opacity-0');
+                document.body.style.overflow = 'auto'; // Kembalikan scroll
+            }, 300);
+        }
+
+        // Event Listener Tombol Tutup
+        closePdfBtn.addEventListener('click', closePDF);
+
+        // Tutup modal jika area gelap di luar kotak putih diklik
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                closePDF();
+            }
+        });
+
+        // Tutup modal jika tombol Escape ditekan
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !pdfModal.classList.contains('hidden')) {
+                closePDF();
+            }
         });
     </script>
 </body>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheiva Herpati - Portofolio Keimigrasian</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#001F3F', // Deep Navy
+                        },
+                        gold: {
+                            500: '#D4AF37', // Elegant gold accent
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Custom shadow for cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased selection:bg-navy-900 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-navy-900 tracking-tight">RHEIVA<span class="text-gray-400 font-light">.</span></a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-navy-900 font-medium transition-colors text-sm uppercase tracking-wider">Tentang</a>
+                    <a href="#experience" class="text-gray-600 hover:text-navy-900 font-medium transition-colors text-sm uppercase tracking-wider">Pengalaman</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-navy-900 font-medium transition-colors text-sm uppercase tracking-wider">Portofolio</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-navy-900 font-medium transition-colors text-sm uppercase tracking-wider">Testimoni</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-navy-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-900 hover:bg-gray-50">Tentang</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-900 hover:bg-gray-50">Pengalaman</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-900 hover:bg-gray-50">Portofolio</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-900 hover:bg-gray-50">Testimoni</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-navy-900 min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Abstract Background Elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white opacity-5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1 text-center lg:text-left reveal-left">
+                    <p class="text-gray-400 font-medium tracking-[0.2em] uppercase mb-3">Portfolio Visa & Keimigrasian</p>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                        Rheiva <br/><span class="text-gray-300">Herpati</span>
+                    </h1>
+                    <div class="h-1 w-20 bg-white mb-6 mx-auto lg:mx-0"></div>
+                    <p class="text-xl text-gray-300 mb-8 font-light max-w-xl mx-auto lg:mx-0">
+                        Administrasi Visa | Izin Tinggal | Pelayanan Keimigrasian
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="mailto:rheivaaherpatii@gmail.com" class="px-8 py-4 bg-white text-navy-900 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2">
+                            <i class="fas fa-envelope"></i> Hubungi Saya
+                        </a>
+                        <a href="#about" class="px-8 py-4 border border-gray-400 text-white font-semibold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-arrow-down"></i> Profil Saya
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image / Graphic -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal-right">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                        <!-- UPLOAD FOTO PROFIL DI SINI -->
+                        <!-- Ganti URL pada src dengan foto Anda, misalnya: src="./foto-profil.jpg" -->
+                        <img src="https://placehold.co/800x800/ffffff/001f3f?text=Foto+Profil+Rheiva" alt="Rheiva Herpati" class="rounded-full object-cover w-full h-full border-8 border-white/10 shadow-2xl relative z-10">
+                        
+                        <!-- Decorative ring -->
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-gray-500 animate-[spin_60s_linear_infinite] scale-110"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Info Box -->
+                <div class="lg:col-span-4 reveal-left">
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-navy-900 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">PROFIL</div>
+                        <h3 class="text-2xl font-bold text-navy-900 mb-6">Pendidikan</h3>
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Sarjana Hukum</h4>
+                                <p class="text-gray-600 text-sm">Universitas Sriwijaya</p>
+                                <div class="mt-2 inline-block bg-navy-50 px-3 py-1 rounded-full border border-navy-100">
+                                    <span class="text-navy-900 font-bold text-sm">IPK: 3,89 / 4,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-gray-200 mb-6">
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Kontak</h3>
+                        <ul class="space-y-4 text-sm text-gray-600">
+                            <li class="flex items-center gap-3"><i class="fas fa-phone text-navy-900 w-5"></i> 085141118010</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-envelope text-navy-900 w-5"></i> rheivaaherpatii@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Text Content -->
+                <div class="lg:col-span-8 reveal-right">
+                    <h2 class="text-sm font-bold tracking-[0.2em] text-gray-400 uppercase mb-2">Perkenalan</h2>
+                    <h3 class="text-4xl font-bold text-navy-900 mb-6">Tentang Saya</h3>
+                    
+                    <div class="space-y-6 text-gray-600 leading-relaxed text-lg text-justify">
+                        <p>
+                            Saya merupakan lulusan Sarjana Hukum Universitas Sriwijaya dengan pengalaman magang yang berfokus pada administrasi keimigrasian di <strong>Kantor Imigrasi Jakarta Pusat</strong> pada Seksi Izin Tinggal dan Status Keimigrasian.
+                        </p>
+                        <p>
+                            Saya memiliki pengalaman komprehensif dalam membantu pengajuan dan perpanjangan visa serta izin tinggal, melakukan pemeriksaan dokumen, memberikan konsultasi persyaratan kepada WNI dan WNA, serta berkoordinasi dalam menangani berbagai permasalahan administrasi keimigrasian.
+                        </p>
+                        <p>
+                            Di luar tugas administratif, saya memiliki inisiatif dalam menyusun panduan prosedur keimigrasian. Saya sangat berkomitmen untuk selalu memberikan informasi pelayanan yang jelas, akurat, dan mudah dipahami oleh pemohon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics / Impact Section -->
+    <section class="py-16 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
+                <div class="reveal">
+                    <h4 class="text-4xl md:text-5xl font-bold mb-2">500<span class="text-blue-400">+</span></h4>
+                    <p class="text-sm text-gray-300 uppercase tracking-wide">WNI & WNA Dibantu Konsultasi</p>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-4xl md:text-5xl font-bold mb-2">50<span class="text-blue-400">+</span></h4>
+                    <p class="text-sm text-gray-300 uppercase tracking-wide">Permasalahan Admin Dikoordinasikan</p>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-4xl md:text-5xl font-bold mb-2">200<span class="text-blue-400">+</span></h4>
+                    <p class="text-sm text-gray-300 uppercase tracking-wide">Dokumen Diverifikasi</p>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-4xl md:text-5xl font-bold mb-2">500<span class="text-blue-400">+</span></h4>
+                    <p class="text-sm text-gray-300 uppercase tracking-wide">Pelayanan Dokumentasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">Riwayat Karier</h2>
+                <h3 class="text-4xl font-bold text-navy-900">Pengalaman Keimigrasian</h3>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden reveal border border-gray-100">
+                <!-- Header Card -->
+                <div class="bg-navy-900 text-white p-8 md:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-10 text-9xl transform translate-x-1/4 -translate-y-1/4">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+                        <div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-2">Kantor Imigrasi Kelas I Non TPI Jakarta Pusat</h4>
+                            <p class="text-blue-200 text-lg">Seksi Izin Tinggal dan Status Keimigrasian</p>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm inline-block">
+                            <span class="font-medium tracking-wide"><i class="far fa-calendar-alt mr-2"></i> November 2025 - Juni 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Card -->
+                <div class="p-8 md:p-10">
+                    <div class="mb-10">
+                        <h5 class="text-sm font-bold tracking-widest text-gray-400 uppercase mb-4">Jenis Layanan yang Pernah Ditangani</h5>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-semibold border border-blue-100">VOA</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-semibold border border-blue-100">ITK</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-semibold border border-blue-100">ITAS / KITAS</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-semibold border border-blue-100">ITAP / KITAP</span>
+                            <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-semibold border border-blue-100">Visa Investor (E28)</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Task 1 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-navy-900 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-navy-900 mb-4">
+                                <i class="fas fa-file-signature text-xl"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-gray-900 mb-3">Pengajuan & Perpanjangan</h5>
+                            <p class="text-gray-600 text-sm leading-relaxed">Membantu proses pengajuan dan perpanjangan berbagai jenis visa dan izin tinggal bagi WNA, termasuk pengurusan visa jenis E28.</p>
+                        </div>
+                        
+                        <!-- Task 2 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-blue-500 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-blue-500 mb-4">
+                                <i class="fas fa-exchange-alt text-xl"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-gray-900 mb-3">Alih Status Izin Tinggal</h5>
+                            <p class="text-gray-600 text-sm leading-relaxed">Menangani proses alih status dari ITK ke ITAS dan ITAS ke ITAP, termasuk permohonan yang menggunakan sponsor perorangan maupun perusahaan.</p>
+                        </div>
+
+                        <!-- Task 3 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-gray-400 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-600 mb-4">
+                                <i class="fas fa-user-check text-xl"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-gray-900 mb-3">Konsultasi & Verifikasi</h5>
+                            <p class="text-gray-600 text-sm leading-relaxed">Melakukan pemeriksaan persyaratan, verifikasi identitas, wawancara WNA, serta memberikan penjelasan prosedur secara langsung kepada pemohon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Tutorial Section -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">Karya Visual</h2>
+                <h3 class="text-4xl font-bold text-navy-900 mb-4">Tutorial Keimigrasian</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Penyusunan panduan prosedur dan tata cara dalam format presentasi untuk memudahkan pemohon memahami regulasi.</p>
+            </div>
+
+            <!-- Grid untuk Gambar Portfolio. Silakan ganti URL di tag <img> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Portfolio Item 1 (ITK) -->
+                <!-- GANTI 'NAMA_FILE_ITK.pdf' DENGAN NAMA FILE PDF ANDA (Contoh: 'Panduan_ITK.pdf') -->
+                <div onclick="openPDF('NAMA_FILE_ITK.pdf', 'Panduan Extension of ITK')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
+                    <div class="h-64 overflow-hidden bg-gray-100 relative">
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
+                        <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+ITK+Di+Sini" alt="Prosedur ITK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white relative z-10">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Panduan</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Extension of Izin Tinggal Kunjungan (ITK)</h4>
+                        <p class="text-gray-600 text-sm">60 Days Visa Extension Procedures.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 (VOA) -->
+                <!-- GANTI 'NAMA_FILE_VOA.pdf' DENGAN NAMA FILE PDF ANDA -->
+                <div onclick="openPDF('NAMA_FILE_VOA.pdf', 'Panduan Visa On Arrival (VOA)')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
+                    <div class="h-64 overflow-hidden bg-gray-100 relative">
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
+                        <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+VOA+Di+Sini" alt="Prosedur VOA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white relative z-10">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Panduan</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Visa On Arrival (VOA)</h4>
+                        <p class="text-gray-600 text-sm">Langkah-langkah aplikasi dan perpanjangan menggunakan e-Visa.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 (ABG) -->
+                <!-- GANTI 'NAMA_FILE_ABG.pdf' DENGAN NAMA FILE PDF ANDA -->
+                <div onclick="openPDF('NAMA_FILE_ABG.pdf', 'Sertifikat Anak Berkewarganegaraan Ganda')" class="group rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 reveal cursor-pointer relative">
+                    <div class="h-64 overflow-hidden bg-gray-100 relative">
+                        <!-- === GANTI GAMBAR COVER DI SINI === -->
+                        <img src="https://placehold.co/800x600/f8fafc/001f3f?text=Upload+Desain+ABG+Di+Sini" alt="Prosedur ABG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-navy-900 font-bold rounded-full shadow-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fas fa-file-pdf text-red-500 text-lg"></i> Lihat PDF
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white relative z-10">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">Tata Cara</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Sertifikat Anak Berkewarganegaraan Ganda</h4>
+                        <p class="text-gray-600 text-sm">Daftar persyaratan dan prosedur pengajuan ABG.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center reveal">
+                <p class="text-sm text-gray-500 italic">*Silakan unggah dan ganti gambar placeholder di atas dengan desain PPT aktual Anda pada source code.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Abstract Bg -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <i class="fas fa-quote-right text-[30rem] absolute -right-20 -top-20"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold tracking-[0.2em] text-blue-300 uppercase mb-2">Google Reviews</h2>
+                <h3 class="text-4xl font-bold text-white">Feedback Pelayanan</h3>
+            </div>
+
+            <!-- Masonry-style Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"The staff are amazing. 2 staff here named <span class="bg-blue-100 px-1 rounded">Rheiva</span> and Diandra helped me in uploading the docs. Very helpful and cheerful faces. It made my night... I was so relaxed with them around."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">M</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Mansha Mulani</h5>
+                            <p class="text-gray-500 text-xs">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"Staff and Interns (Diandra and <span class="bg-blue-100 px-1 rounded">Rheiva</span>) were the most kind and friendly helpers. Helped me with VOA extension and stay past closing. 5 star service!!!!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">K</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Kai Man Lee</h5>
+                            <p class="text-gray-500 text-xs">Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"Je suis venu ici pour une extension de visa et <span class="bg-blue-100 px-1 rounded">rheiva</span> m'a directement pris en charge et m'a accompagné de A à Z avec aisance, rapidité et gentillesse. Merci beaucoup!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">T</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Thomas mo</h5>
+                            <p class="text-gray-500 text-xs">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"Diandra and <span class="bg-blue-100 px-1 rounded">Rheiva</span>, what wonderful ambassadors they are for immigration and Indonesia. Could not fault them they were wonderful in assisting me with my visa."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">M</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Mike Mathews</h5>
+                            <p class="text-gray-500 text-xs">Australia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"Utk ibu <span class="bg-blue-100 px-1 rounded">Rheiva</span> staff stay permit sangat sangat membantu, sabar saya sangat berterima kasih. Semoga bisa mencapai apa yg dicita citakan."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">R</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Ronny Sebastian</h5>
+                            <p class="text-gray-500 text-xs">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="glass-card p-6 rounded-2xl reveal">
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-800 mb-4 text-sm font-medium">"<span class="bg-blue-100 px-1 rounded">Rheiva</span> was super helpful and made the visa extension super smooth! Very friendly staff and clean building :)"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex justify-center items-center text-gray-600 font-bold">S</div>
+                        <div>
+                            <h5 class="text-gray-900 font-bold text-sm">Shaan Singh</h5>
+                            <p class="text-gray-500 text-xs">Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 pt-16 pb-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center text-center">
+                <h2 class="text-3xl font-bold text-navy-900 mb-2">THANK YOU</h2>
+                <p class="text-gray-500 mb-8 max-w-md">Terima kasih telah mengunjungi halaman portofolio saya. Untuk diskusi lebih lanjut terkait pelayanan imigrasi, silakan hubungi saya.</p>
+                
+                <div class="flex gap-4 mb-10">
+                    <a href="mailto:rheivaaherpatii@gmail.com" class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-navy-900 hover:text-white hover:border-navy-900 transition-all shadow-sm">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/6285141118010" class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all shadow-sm">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+
+                <div class="text-gray-400 text-sm">
+                    &copy; 2026 Rheiva Herpati. All rights reserved. <br/>
+                    Designed for Immigration Professional Services.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-navy-900/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 p-4">
+        <div class="relative w-full max-w-5xl h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden scale-95 transition-transform duration-300" id="pdf-modal-content">
+            
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-4 md:px-6 border-b border-gray-200 bg-gray-50 z-20">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                    <h3 id="pdf-modal-title" class="text-lg md:text-xl font-bold text-navy-900 line-clamp-1">Dokumen</h3>
+                </div>
+                <button id="close-pdf-btn" class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 hover:bg-red-100 hover:text-red-600 flex items-center justify-center transition-colors focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="flex-grow w-full h-full relative bg-gray-200">
+                <!-- Loading Spinner -->
+                <div id="pdf-loading" class="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <i class="fas fa-circle-notch fa-spin text-4xl text-navy-900 mb-3"></i>
+                    <p class="text-gray-600 font-medium animate-pulse">Memuat Dokumen...</p>
+                    <p class="text-gray-400 text-sm mt-2 max-w-xs text-center">*Jika tidak muncul, pastikan file PDF sudah di-upload ke folder yang sama.</p>
+                </div>
+                
+                <!-- Iframe Viewer -->
+                <iframe id="pdf-iframe" class="w-full h-full border-none relative z-20 opacity-0 transition-opacity duration-500" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Optional: animate only once
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements with reveal classes
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==========================================
+        // PDF Modal Logic
+        // ==========================================
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfModalContent = document.getElementById('pdf-modal-content');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        const pdfModalTitle = document.getElementById('pdf-modal-title');
+        const closePdfBtn = document.getElementById('close-pdf-btn');
+
+        // Fungsi Buka PDF
+        function openPDF(pdfUrl, title) {
+            pdfModalTitle.textContent = title;
+            
+            // Tampilkan Modal (Remove hidden)
+            pdfModal.classList.remove('hidden');
+            
+            // Jalankan animasi setelah frame berikutnya
+            requestAnimationFrame(() => {
+                pdfModal.classList.remove('opacity-0');
+                pdfModalContent.classList.remove('scale-95');
+                pdfModalContent.classList.add('scale-100');
+            });
+
+            // Setel source iframe
+            pdfIframe.src = pdfUrl;
+            
+            // Ketika iframe selesai dimuat, tampilkan iframe-nya (sembunyikan efek loading)
+            pdfIframe.onload = function() {
+                pdfIframe.classList.remove('opacity-0');
+            };
+            
+            // Cegah scroll pada body utama
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi Tutup PDF
+        function closePDF() {
+            // Jalankan animasi keluar
+            pdfModal.classList.add('opacity-0');
+            pdfModalContent.classList.remove('scale-100');
+            pdfModalContent.classList.add('scale-95');
+            
+            // Sembunyikan sepenuhnya setelah animasi selesai (300ms)
+            setTimeout(() => {
+                pdfModal.classList.add('hidden');
+                pdfIframe.src = ""; // Bersihkan source agar tidak memuat di belakang layar
+                pdfIframe.classList.add('opacity-0');
+                document.body.style.overflow = 'auto'; // Kembalikan scroll
+            }, 300);
+        }
+
+        // Event Listener Tombol Tutup
+        closePdfBtn.addEventListener('click', closePDF);
+
+        // Tutup modal jika area gelap di luar kotak putih diklik
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                closePDF();
+            }
+        });
+
+        // Tutup modal jika tombol Escape ditekan
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !pdfModal.classList.contains('hidden')) {
+                closePDF();
+            }
+        });
+    </script>
+</body>
+</html>
